@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>MAVEN</ID>
+  <OriginalElement>com.demo:EContact:0.0.1-SNAPSHOT</OriginalElement>
+  <nodes>
+    <node x="0.0" y="126.0">com.demo:EContact:0.0.1-SNAPSHOT</node>
+    <node x="98.0" y="0.0">org.springframework.boot:spring-boot-starter-data-jpa:jar:2.5.2</node>
+    <node x="94.0" y="42.0">org.springframework.boot:spring-boot-starter-thymeleaf:jar:2.5.2</node>
+    <node x="109.5" y="84.0">org.springframework.boot:spring-boot-starter-web:jar:2.5.2</node>
+    <node x="167.5" y="126.0">com.h2database:h2:jar:1.4.200</node>
+    <node x="153.5" y="168.0">org.projectlombok:lombok:jar:1.18.20</node>
+    <node x="111.0" y="210.0">org.springframework.boot:spring-boot-starter-test:jar:2.5.2</node>
+    <node x="142.5" y="252.0">org.jetbrains:annotations:jar:0.0.1-SNAPSHOT</node>
+  </nodes>
+  <notes />
+  <edges>
+    <edge source="com.demo:EContact:0.0.1-SNAPSHOT" target="org.jetbrains:annotations:jar:0.0.1-SNAPSHOT">
+      <point x="37.0" y="9.428571428571445" />
+      <point x="94.0" y="263.0" />
+      <point x="-44.5" y="-0.0" />
+    </edge>
+    <edge source="com.demo:EContact:0.0.1-SNAPSHOT" target="org.springframework.boot:spring-boot-starter-test:jar:2.5.2">
+      <point x="37.0" y="6.285714285714278" />
+      <point x="94.0" y="221.0" />
+      <point x="-76.0" y="-0.0" />
+    </edge>
+    <edge source="com.demo:EContact:0.0.1-SNAPSHOT" target="org.springframework.boot:spring-boot-starter-web:jar:2.5.2">
+      <point x="37.0" y="-3.142857142857139" />
+      <point x="94.0" y="95.0" />
+      <point x="-77.5" y="-0.0" />
+    </edge>
+    <edge source="com.demo:EContact:0.0.1-SNAPSHOT" target="com.h2database:h2:jar:1.4.200">
+      <point x="37.0" y="-0.0" />
+      <point x="-19.5" y="-0.0" />
+    </edge>
+    <edge source="com.demo:EContact:0.0.1-SNAPSHOT" target="org.projectlombok:lombok:jar:1.18.20">
+      <point x="37.0" y="3.142857142857139" />
+      <point x="94.0" y="179.0" />
+      <point x="-33.5" y="-0.0" />
+    </edge>
+    <edge source="com.demo:EContact:0.0.1-SNAPSHOT" target="org.springframework.boot:spring-boot-starter-thymeleaf:jar:2.5.2">
+      <point x="37.0" y="-6.285714285714278" />
+      <point x="-93.0" y="-0.0" />
+    </edge>
+    <edge source="com.demo:EContact:0.0.1-SNAPSHOT" target="org.springframework.boot:spring-boot-starter-data-jpa:jar:2.5.2">
+      <point x="37.0" y="-9.42857142857143" />
+      <point x="-89.0" y="-0.0" />
+    </edge>
+  </edges>
+  <settings layout="Hierarchic Group" zoom="1.0" x="140.0" y="137.0" />
+  <SelectedNodes>
+    <node>com.demo:EContact:0.0.1-SNAPSHOT</node>
+  </SelectedNodes>
+  <Categories>
+    <Category>Show Neighbours of Selected Nodes</Category>
+    <Category>Borderless View</Category>
+  </Categories>
+  <VISIBILITY>All</VISIBILITY>
+</Diagram>
+
