@@ -9,13 +9,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloController {
 
-    @GetMapping (value = "/printHello")
+    @GetMapping(value = "/printHello")
     @ResponseBody
     public String printHello(){
         return "Hello World!";
     }
 
-    @GetMapping (value = "/printParam")
+    @GetMapping(value = "/printParam")
     @ResponseBody
     public String printParam(@RequestParam("username") String name){
         return "Hello " + name;
@@ -27,4 +27,9 @@ public class HelloController {
         return "Hello " + organization;
     }
 
+    @GetMapping(value = "/printPathVariable/{country}/index")
+    @ResponseBody
+    public String printPathVariable(@PathVariable String country){
+        return "Site country " + country;
+    }
 }
