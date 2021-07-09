@@ -9,6 +9,8 @@ import org.springframework.web.bind.annotation.ResponseBody;
 @Controller
 public class HelloController {
 
+    private String country;
+
     @GetMapping(value = "/printHello")
     @ResponseBody
     public String printHello(){
@@ -27,9 +29,5 @@ public class HelloController {
         return "Hello " + organization;
     }
 
-    @GetMapping(value = "/printPathVariable/{country}/index")
-    @ResponseBody
-    public String printPathVariable(@PathVariable String country){
-        return "Site country " + country;
-    }
+
 }
