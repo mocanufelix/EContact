@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+
+
+    <link rel="stylesheet" type="text/css"
+          media="all" th:href="@{/bootstrap/css/bootstrap.min.css}">
+
+</head>
+<body>
+<h1>This is the body of the page</h1>
+
+<span th:text="${greetings}"/>
+
+<div class="col-6">
+    <table class="table table-striped">
+        <thead>
+            <tr>
+                <td>ID</td>
+                <td>FirstName</td>
+                <td>LastName</td>
+                <td>PhoneNumber</td>
+                <td>Adress</td>
+                <td>Email</td>
+            </tr>
+        </thead>
+        <tbody>
+            <tr th:each="econtact : ${econtactList}" >
+                <td th:text="${econtact.id}"/>
+                <td th:text="${econtact.firstName}"/>
+                <td th:text="${econtact.lastName}"/>
+                <td th:text="${econtact.phoneNumber}"/>
+                <td th:text="${econtact.adress}"/>
+                <td th:text="${econtact.email}"/>
+            </tr>
+        </tbody>
+
+    </table>
+
+</div>
+
+<div th:each="econtact : ${econtactNameList}">
+    <span th:text="${econtact}"/>
+</div>
+
+</body>
+
+<script th:src="@{/bootstrap/js/bootstrap.min.js}" ></script>
+
+</html>

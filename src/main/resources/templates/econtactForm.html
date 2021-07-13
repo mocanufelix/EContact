@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Econtact Form</title>
+    <link rel="stylesheet" type="text/css"
+          media="all" th:href="@{/bootstrap/css/bootstrap.min.css}">
+</head>
+<body>
+<h2>Create a new econtact</h2>
+
+<div class="col-lg-12">
+
+    <form th:action="@{/submitEcontact}" th:object="${econtact}" method="POST">
+        <div class="form-group row">
+            <label class="col-2">Firstname</label>
+            <input class="col-4" type="text" th:field="${econtact.firstName}">
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2">Lastname</label>
+            <input class="col-4" type="text"> th:field="${econtact.lasttName}
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2">Monthly salary</label>
+            <input class="col-4" type="text" th:field="${econtact.monthlySalary}>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2">Department Name</label>
+            <input class="col-4" type="text" th:field="${econtact.departmentName}">
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2">Phone Number</label>
+            <input class="col-4" type="text" th:field="${econtact.phoneNumber}">
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2">Adress</label>
+            <input class="col-4" type="text" th:field="${econtact.addres}">
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2">Email</label>
+            <input class="col-4" type="text" th:field="${econtact.email}">
+        </div>
+
+
+
+        <div class="form-group row col-1">
+            <button class="btn-primary">Submit</button>
+        </div>
+
+    </form>
+
+
+
+</div>
+
+
+</body>
+
+<script th:src="@{/bootstrap/js/bootstrap.min.js}" ></script>
+</html>
