@@ -57,29 +57,60 @@ public class EcontactController {
         Econtact econtact1;
         econtact1 = Econtact.builder()
                 .id(1)
-                .firstName("aaa")
-                .lastName("bbb")
-                .monthlySalary(100)
-                .departmentName("dep1")
+                .firstName("Felix")
+                .lastName("Mocanu")
+                .phoneNumber("0741588412")
+                .adress("str.AlexCiurcu nr.46")
+                .city("Brasov")
+                .email("mocanufelix@yahoo.com")
                 .build();
 
-        Econtact econtact2 = Econtact.builder()
+        Econtact econtact2;
+        econtact2 = Econtact.builder()
                 .id(2)
-                .firstName("xxx")
-                .lastName("yyy")
-                .monthlySalary(200)
-                .departmentName("dep2")
+                .firstName("Aura")
+                .lastName("Moraru")
+                .phoneNumber("0741588123")
+                .adress("str.Toamnei nr.50")
+                .city("Brasov")
+                .email("moraruaura@yahoo.com")
                 .build();
 
-        Econtact econtact3 = Econtact.builder()
+        Econtact econtact3;
+        econtact3 = Econtact.builder()
                 .id(3)
-                .firstName("ggg")
-                .lastName("hhh")
-                .monthlySalary(300)
-                .departmentName("dep3")
+                .firstName("Adela")
+                .lastName("Anghelescu")
+                .phoneNumber("0745258741")
+                .adress("str.Dacia nr.76")
+                .city("Bucuresti")
+                .email("adeade@yahoo.com")
                 .build();
 
-        return List.of(econtact1, econtact2, econtact3);
+        Econtact econtact4;
+        econtact4 = Econtact.builder()
+                .id(4)
+                .firstName("Catalin")
+                .lastName("Auras")
+                .phoneNumber("0745123789")
+                .adress("str.Mihai Viteazu nr.23")
+                .city("Cluj")
+                .email("aurasc@yahoo.com")
+                .build();
+
+        Econtact econtact5;
+        econtact5 = Econtact.builder()
+                .id(5)
+                .firstName("Florin")
+                .lastName("Mezzeti")
+                .phoneNumber("0758456367")
+                .adress("str.Aeroportului nr.29")
+                .city("Oradea")
+                .email("florinmezzeti@yahoo.com")
+                .build();
+
+
+        return List.of(econtact1, econtact2, econtact3, econtact4, econtact5);
 
     }
 }

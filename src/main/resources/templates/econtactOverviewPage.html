@@ -15,7 +15,7 @@
 
 <span th:text="${greetings}"/>
 
-<div class="col-6">
+<div class="col-12">
     <table class="table table-striped">
         <thead>
             <tr>
@@ -24,6 +24,7 @@
                 <td>LastName</td>
                 <td>PhoneNumber</td>
                 <td>Adress</td>
+                <td>City</td>
                 <td>Email</td>
             </tr>
         </thead>
@@ -34,6 +35,7 @@
                 <td th:text="${econtact.lastName}"/>
                 <td th:text="${econtact.phoneNumber}"/>
                 <td th:text="${econtact.adress}"/>
+                <td th:text="${econtact.city}"/>
                 <td th:text="${econtact.email}"/>
             </tr>
         </tbody>
