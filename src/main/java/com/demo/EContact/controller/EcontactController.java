@@ -68,6 +68,17 @@ public class EcontactController {
         Econtact econtact2;
         econtact2 = Econtact.builder()
                 .id(2)
+                .firstName("Daniel")
+                .lastName("Tintea")
+                .phoneNumber("0733122893")
+                .adress("str. nr.")
+                .city("Ploiesti")
+                .email("tinteadanieldanny@yahoo.com")
+                .build();
+
+        Econtact econtact3;
+        econtact3 = Econtact.builder()
+                .id(2)
                 .firstName("Aura")
                 .lastName("Moraru")
                 .phoneNumber("0741588123")
@@ -76,8 +87,8 @@ public class EcontactController {
                 .email("moraruaura@yahoo.com")
                 .build();
 
-        Econtact econtact3;
-        econtact3 = Econtact.builder()
+        Econtact econtact4;
+        econtact4 = Econtact.builder()
                 .id(3)
                 .firstName("Adela")
                 .lastName("Anghelescu")
@@ -87,8 +98,8 @@ public class EcontactController {
                 .email("adeade@yahoo.com")
                 .build();
 
-        Econtact econtact4;
-        econtact4 = Econtact.builder()
+        Econtact econtact5;
+        econtact5 = Econtact.builder()
                 .id(4)
                 .firstName("Catalin")
                 .lastName("Auras")
@@ -98,8 +109,8 @@ public class EcontactController {
                 .email("aurasc@yahoo.com")
                 .build();
 
-        Econtact econtact5;
-        econtact5 = Econtact.builder()
+        Econtact econtact6;
+        econtact6 = Econtact.builder()
                 .id(5)
                 .firstName("Florin")
                 .lastName("Mezzeti")
@@ -110,7 +121,7 @@ public class EcontactController {
                 .build();
 
 
-        return List.of(econtact1, econtact2, econtact3, econtact4, econtact5);
+        return List.of(econtact1, econtact2, econtact3, econtact4, econtact5, econtact6);
 
     }
 }
