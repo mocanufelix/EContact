@@ -21,12 +21,6 @@ public class HelloController {
         return "Hello " + name;
     }
 
-    @GetMapping (value = "/printPathVariable/{organization}")
-    @ResponseBody
-    public String printPathVariable(@PathVariable String organization){
-        return "Hello " + organization;
-    }
-
     @GetMapping(value = "/printPathVariable/{country}/index")
     @ResponseBody
     public String printPathVariable(@PathVariable String country){
