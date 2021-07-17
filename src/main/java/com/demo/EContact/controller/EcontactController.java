@@ -20,10 +20,6 @@ public class EcontactController {
     public ModelAndView wiewEcontacts(Model model, Symbol symbol){
         ModelAndView mav = new ModelAndView();
 
-        model.addAttribute("greetings", "Hello World");
-
-        List<String> econtactNameList = List.of("Popescu","Georgescu","Ionescu","Alexandrescu");
-        model.addAttribute("econtactNameList", econtactNameList);
 
         List<Econtact> econtactList = getEcontactList();
         model.addAttribute("econtactList", econtactList);
@@ -36,8 +32,11 @@ public class EcontactController {
 
 
     @GetMapping(value = "/econtactForm")
-    public ModelAndView getEcontactForm(){
+    public ModelAndView getEcontactForm(Model model){
         ModelAndView mav = new ModelAndView();
+
+        Econtact econtact=Econtact.builder().build();
+        model.addAttribute("econtact" ,econtact);
 
         mav.setViewName("econtactForm");
         return mav;
@@ -60,7 +59,7 @@ public class EcontactController {
                 .firstName("Felix")
                 .lastName("Mocanu")
                 .phoneNumber("0741588412")
-                .adress("str.AlexCiurcu nr.46")
+                .address("str.AlexCiurcu nr.46")
                 .city("Brasov")
                 .email("mocanufelix@yahoo.com")
                 .build();
@@ -71,7 +70,7 @@ public class EcontactController {
                 .firstName("Daniel")
                 .lastName("Tintea")
                 .phoneNumber("0733122893")
-                .adress("str. nr.")
+                .address("str. nr.")
                 .city("Ploiesti")
                 .email("tinteadanieldanny@yahoo.com")
                 .build();
@@ -82,7 +81,7 @@ public class EcontactController {
                 .firstName("Aura")
                 .lastName("Moraru")
                 .phoneNumber("0741588123")
-                .adress("str.Toamnei nr.50")
+                .address("str.Toamnei nr.50")
                 .city("Brasov")
                 .email("moraruaura@yahoo.com")
                 .build();
@@ -93,7 +92,7 @@ public class EcontactController {
                 .firstName("Adela")
                 .lastName("Anghelescu")
                 .phoneNumber("0745258741")
-                .adress("str.Dacia nr.76")
+                .address("str.Dacia nr.76")
                 .city("Bucuresti")
                 .email("adeade@yahoo.com")
                 .build();
@@ -104,7 +103,7 @@ public class EcontactController {
                 .firstName("Catalin")
                 .lastName("Auras")
                 .phoneNumber("0745123789")
-                .adress("str.Mihai Viteazu nr.23")
+                .address("str.Mihai Viteazu nr.23")
                 .city("Cluj")
                 .email("aurasc@yahoo.com")
                 .build();
@@ -115,7 +114,7 @@ public class EcontactController {
                 .firstName("Florin")
                 .lastName("Mezzeti")
                 .phoneNumber("0758456367")
-                .adress("str.Aeroportului nr.29")
+                .address("str.Aeroportului nr.29")
                 .city("Oradea")
                 .email("florinmezzeti@yahoo.com")
                 .build();
