@@ -15,7 +15,7 @@
 
 <span th:text="${greetings}"/>
 
-<div class="col-12">
+<div class="col-6">
     <table class="table table-striped">
         <thead>
             <tr>
@@ -23,7 +23,7 @@
                 <td>FirstName</td>
                 <td>LastName</td>
                 <td>PhoneNumber</td>
-                <td>Adress</td>
+                <td>Address</td>
                 <td>City</td>
                 <td>Email</td>
             </tr>
@@ -34,10 +34,18 @@
                 <td th:text="${econtact.firstName}"/>
                 <td th:text="${econtact.lastName}"/>
                 <td th:text="${econtact.phoneNumber}"/>
-                <td th:text="${econtact.adress}"/>
+                <td th:text="${econtact.address}"/>
                 <td th:text="${econtact.city}"/>
                 <td th:text="${econtact.email}"/>
+                <td>
+                    <form method="POST" action="@{/editEcontact}" th:object="${econtact}">
+                        <input name="econtactId" th:value="${econtact.id}">
+                        <input name="econtactCity" th:value="${econtact.city}">
+                        <button class="btn btn.primary" type="sumit">Edit</button>
+                    </form>
+                </td>
             </tr>
+
         </tbody>
 
     </table>
