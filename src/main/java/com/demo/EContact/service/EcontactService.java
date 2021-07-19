@@ -1,36 +1,24 @@
 package com.demo.EContact.service;
 
-import com.demo.EContact.component.DatabaseReader;
-import com.demo.EContact.component.ExcelReader;
-import com.demo.EContact.controller.Econtact;
+import com.demo.EContact.entity.Econtact;
+import com.demo.EContact.repository.EcontactRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
+import java.util.List;
 
 @Service
 public class EcontactService {
 
     @Autowired
-    DatabaseReader dbReader;
-
-    @Autowired
-    ExcelReader excelReader;
+    EcontactRepository econtactRepository;
 
     public List<Econtact>getEcontacts(){
-        List<Econtact> list = new ArrayList<>();
-
-        list.addAll(dbReader.getEcontactsFromDB());
-        list.addAll(excelReader.getEcontactsFromExcel());
-
-        return list;
-
+       return econtactRepository.findAll();
     }
 
-    public void saveEcontactToDatabase(Econtact econtact){
-
+    public void saveEcontactToDataBase(Econtact econtact) {
+        econtactRepository.save(econtact);
     }
 }

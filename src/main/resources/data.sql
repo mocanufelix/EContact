@@ -1,4 +1,3 @@
-insert into t_econtact (lastName, firstName, phoneNumber, address, city, email) values ('Mad', 'Max', '07999999', 'str.Firmei nr.45', 'Tulcea', 'madmax@yahoo.com');
-insert into t_econtact (lastName, firstName, phoneNumber, address, city, email) values ('Iron', 'Man', '07999999', 'str.Lunga nr.45', 'Craiova', 'ironman@yahoo.com');
-insert into t_econtact (lastName, firstName, phoneNumber, address, city, email) values ('Spider', 'Man', '07999999', 'str.Astra nr.45', 'Buzau', 'spiderman@yahoo.com');
-insert into t_econtact (lastName, firstName, phoneNumber, address, city, email) values ('Dimitrie', 'Anghel', '07999999', 'str.Verii nr.45', 'Fagaras', 'dmian@yahoo.com');
+insert into t_econtact (lastName, firstName, phoneNumber, address, city, email) values ('Marcu', 'Antonia', '0742563563', 'str.Firmei nr.45', 'Tulcea', 'marcuA@yahoo.com');
+insert into t_econtact (lastName, firstName, phoneNumber, address, city, email) values ('Popovici', 'Andreea', '0747852963', 'str.Firmei nr.45', 'Tulcea', 'andreeap@yahoo.com');
+insert into t_econtact (lastName, firstName, phoneNumber, address, city, email) values ('Bratianu', 'Cornel', '0765987456', 'str.Firmei nr.45', 'Tulcea', 'cornelb@yahoo.com');

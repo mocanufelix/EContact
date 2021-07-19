@@ -2,6 +2,7 @@ package com.demo.EContact.controller;
 
 
 
+import com.demo.EContact.entity.Econtact;
 import com.demo.EContact.service.EcontactService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -32,12 +33,9 @@ public class EcontactController {
         List<Econtact> econtactList = econtactService.getEcontacts();
         model.addAttribute("econtactList", econtactList);
 
-
         mav.setViewName("econtactOverviewPage");
         return mav;
     }
-
-
 
     @GetMapping(value = "/econtactForm")
     public ModelAndView getEcontactForm(Model model){
@@ -53,12 +51,9 @@ public class EcontactController {
     @PostMapping (value = "/submitEcontact")
     public ModelAndView submitEcontact(@ModelAttribute Econtact econtact){
         ModelAndView mav = new ModelAndView();
-
-        System.out.println("submitEcontact");
-        System.out.println(econtact.toString());
-
-
-        //econtactService.saveEcontactToDataBase(econtact);
+       // System.out.println("submitEcontact");
+       // System.out.println(econtact.toString());
+        econtactService.saveEcontactToDataBase(econtact);
 
         mav.setViewName("redirect:/econtactOverview");
         return mav;
@@ -91,7 +86,7 @@ public class EcontactController {
 
 
 
-    private List<Econtact> getEcontactList(){
+  /*  private List<Econtact> getEcontactList(){
         Econtact econtact1;
         econtact1 = Econtact.builder()
                 .id(1)
@@ -161,7 +156,7 @@ public class EcontactController {
 
         return List.of(econtact1, econtact2, econtact3, econtact4, econtact5, econtact6);
 
-    }
+    }*/
 }
 
 
