@@ -19,13 +19,13 @@ public class   Econtact {
     @Column
     private int id;
 
-    @Column(name="lastName")
+    @Column(name="lastname")
     private String lastName;
 
-    @Column(name="firstName")
+    @Column(name="firstname")
     private String firstName;
 
-    @Column(name="phoneNumber")
+    @Column(name="phonenumber")
     private String phoneNumber;
 
     @Column(name="address")
