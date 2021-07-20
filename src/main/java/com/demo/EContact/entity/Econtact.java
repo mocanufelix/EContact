@@ -19,22 +19,22 @@ public class   Econtact {
     @Column
     private int id;
 
-    @Column
+    @Column(name="lastName")
     private String lastName;
 
-    @Column
+    @Column(name="firstName")
     private String firstName;
 
-    @Column
+    @Column(name="phoneNumber")
     private String phoneNumber;
 
-    @Column
+    @Column(name="address")
     private String address;
 
-    @Column
+    @Column(name="city")
     private String city;
 
-    @Column
+    @Column(name="email")
     private String email;
 
 }

@@ -25,11 +25,6 @@ public class EcontactController {
     public ModelAndView wiewEcontacts(Model model){
         ModelAndView mav = new ModelAndView();
 
-        model.addAttribute("greetings", "Hello World");
-
-        List<String> econtactNameList = List.of("Popescu","Georgescu","Ionescu","Alexandrescu");
-        model.addAttribute("econtactNameList", econtactNameList);
-
         List<Econtact> econtactList = econtactService.getEcontacts();
         model.addAttribute("econtactList", econtactList);
 
@@ -81,6 +76,13 @@ public class EcontactController {
 
 
         mav.setViewName("econtactForm");
+        return mav;
+    }
+
+    @PostMapping (value = "/messageEcontact")
+    public ModelAndView messageEcontact(@ModelAttribute Econtact econtact){
+        ModelAndView mav = new ModelAndView();
+        mav.setViewName("redirect:/Mesagerie");
         return mav;
     }
 
