@@ -45,6 +45,9 @@
                 <td>Address</td>
                 <td>City</td>
                 <td>Email</td>
+                <td>Group Code</td>
+                <td>Group Name</td>
+                <td>Action</td>
             </tr>
         </thead>
         <tbody>
@@ -56,6 +59,8 @@
                 <td th:text="${econtact.address}"/>
                 <td th:text="${econtact.city}"/>
                 <td th:text="${econtact.email}"/>
+                <td th:text="${econtact.group.groupCode}"/>
+                <td th:text="${econtact.group.groupName}"/>
                 <td>
                     <form method="POST" th:action="@{/editEcontact}" th:object="${econtact}">
                         <input name="econtactId" th:value="${econtact.id}">

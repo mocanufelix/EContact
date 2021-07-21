@@ -37,4 +37,8 @@ public class   Econtact {
     @Column
     private String email;
 
+    @ManyToOne
+    @JoinColumn(name="id_group")
+    private Group group;
+
 }
