@@ -33,8 +33,6 @@
 <div class="col-lg-12">
 
 
-    <span th:text="${greetings}"/>
-
     <form  action="" class="main-form needs-validation" novalidate style="width: 500px; margin:auto" th:action="@{/submitEcontact}" th:object="${econtact}" method="POST">
         <div class="form-group row">
             <label>LastName</label>
@@ -72,14 +70,34 @@
             <div class="invalid-feedback">AddEmail</div>
         </div>
 
-
-        <div class="form-check">
-            <input type="checkbox" id="accept-terms" class="form-check-imput" required>
-            <label for="accept-terms">Accept Terms &amp; Conditions</label>
-            <div class="invalid-feedback">Accept Terms &amp; Conditions</div>
+        <div class="form-group row">
+            <label>Group Id</label>
+            <input type="text" th:field="${econtact.group.id}" class="form-control" required>
+            <div class="invalid-feedback">AddEmail</div>
         </div>
 
-        <div>
+
+        <div style="background-color: #FFFFFF; margin-top:5px">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <td>Id</td>
+                <td>Code</td>
+                <td>Name</td>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="group : ${groupList}">
+                <td th:text="${group.id}"/>
+                <td th:text="${group.groupCode}"/>
+                <td th:text="${group.groupName}"/>
+            </tr>
+            </tbody>
+
+        </table>
+        </div>
+
+        <div >
             <button class="btn-primary">Add</button>
         </div>
 
