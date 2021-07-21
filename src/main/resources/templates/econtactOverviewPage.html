@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Contacts</title>
 
 
 
@@ -15,25 +15,32 @@
     <div class="collapse navbar-collapse" id="navbarMenu" style="margin-left:40%; margin-right:30%;">
         <ul class="navbar-nav">
             <li class="nav-item">
-                <a href="#" class="nav-link">Login</a>
+                <a href="http://localhost:8080/EContact" class="nav-link">Home</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">Adauga contact</a>
+                <a href="http://localhost:8080/Login" class="nav-link">Login</a>
             </li>
             <li class="nav-item">
-                <a href="#" class="nav-link">Contacte</a>
+                <a href="http://localhost:8080/econtactForm#" class="nav-link">Add Contact</a>
+            </li>
+            <li class="nav-item">
+                <a href="http://localhost:8080/econtactOverview" class="nav-link">Contacts</a>
             </li>
         </ul>
     </div>
 </nav>
+
+<div class="contact-title" style="margin-left:40%; margin-top:35px">
+    <h1>Contacts</h1>
+</div>
 
 <div class="col-8">
     <table class="table table-striped table-hover">
         <thead>
             <tr>
                 <td>ID</td>
-                <td>FirstName</td>
                 <td>LastName</td>
+                <td>FirstName</td>
                 <td>PhoneNumber</td>
                 <td>Address</td>
                 <td>City</td>
@@ -43,8 +50,8 @@
         <tbody>
             <tr th:each="econtact : ${econtactList}" >
                 <td th:text="${econtact.id}"/>
-                <td th:text="${econtact.firstName}"/>
                 <td th:text="${econtact.lastName}"/>
+                <td th:text="${econtact.firstName}"/>
                 <td th:text="${econtact.phoneNumber}"/>
                 <td th:text="${econtact.address}"/>
                 <td th:text="${econtact.city}"/>

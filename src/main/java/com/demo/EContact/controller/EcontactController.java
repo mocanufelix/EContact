@@ -21,6 +21,31 @@ public class EcontactController {
     @Autowired
     EcontactService econtactService;
 
+
+    @GetMapping(value="/EContact")
+    public ModelAndView firstPageEcontact(Model model){
+        ModelAndView mav = new ModelAndView();
+
+        Econtact econtact = Econtact.builder().build();
+        model.addAttribute("econtact", econtact);
+
+        mav.setViewName("EContact");
+        return mav;
+    }
+
+
+
+    @GetMapping(value="/Login")
+    public ModelAndView logEcontact(Model model){
+        ModelAndView mav = new ModelAndView();
+
+        Econtact econtact = Econtact.builder().build();
+        model.addAttribute("econtact", econtact);
+
+        mav.setViewName("Login");
+        return mav;
+    }
+
     @GetMapping(value = "/econtactOverview")
     public ModelAndView wiewEcontacts(Model model){
         ModelAndView mav = new ModelAndView();

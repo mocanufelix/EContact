@@ -28,13 +28,13 @@ public class   Econtact {
     @Column(name="phonenumber")
     private String phoneNumber;
 
-    @Column(name="address")
+    @Column
     private String address;
 
-    @Column(name="city")
+    @Column
     private String city;
 
-    @Column(name="email")
+    @Column
     private String email;
 
 }
