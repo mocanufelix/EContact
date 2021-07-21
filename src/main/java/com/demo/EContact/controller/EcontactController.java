@@ -68,6 +68,17 @@ public class EcontactController {
         return mav;
     }
 
+    @GetMapping(value = "/Mesagerie")
+    public ModelAndView getmessageEcontact(Model model){
+        ModelAndView mav = new ModelAndView();
+
+        Econtact econtact = Econtact.builder().build();
+        model.addAttribute("econtact", econtact);
+
+        mav.setViewName("Mesagerie");
+        return mav;
+    }
+
     @PostMapping (value = "/submitEcontact")
     public ModelAndView submitEcontact(@ModelAttribute Econtact econtact){
         ModelAndView mav = new ModelAndView();
@@ -79,7 +90,7 @@ public class EcontactController {
     }
 
     @PostMapping(value = "/editEcontact")
-    public ModelAndView editEcontact(@RequestParam("econtactId") int idEcontact, @RequestParam String city, Model model){
+    public ModelAndView editEcontact(@RequestParam("econtactId") int idEcontact, @RequestParam("econtactCity") String city, Model model){
 
         ModelAndView mav = new ModelAndView();
 
@@ -106,6 +117,8 @@ public class EcontactController {
     @PostMapping (value = "/messageEcontact")
     public ModelAndView messageEcontact(@ModelAttribute Econtact econtact){
         ModelAndView mav = new ModelAndView();
+
+
         mav.setViewName("redirect:/Mesagerie");
         return mav;
     }

@@ -57,15 +57,15 @@
                 <td th:text="${econtact.city}"/>
                 <td th:text="${econtact.email}"/>
                 <td>
-                    <form method="POST" action="@{/editEcontact}" th:object="${econtact}">
+                    <form method="POST" th:action="@{/editEcontact}" th:object="${econtact}">
                         <input name="econtactId" th:value="${econtact.id}">
                         <input name="econtactCity" th:value="${econtact.city}">
-                        <button class="btn btn.primary" type="sumit">Edit</button>
+                        <button class="btn btn.primary" type="submit">Edit</button>
                     </form>
                 </td>
                 <td>
-                    <form method="POST" action="@{/messageEcontact}" th:object="${econtact}">
-                        <button class="btn btn.primary" type="sumit">Message</button>
+                    <form method="POST" th:action="@{/messageEcontact}" th:object="${econtact}">
+                        <button class="btn btn.primary" type="submit">Message</button>
                     </form>
                 </td>
             </tr>
