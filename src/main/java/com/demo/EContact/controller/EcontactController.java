@@ -3,14 +3,13 @@ package com.demo.EContact.controller;
 
 
 import com.demo.EContact.entity.Econtact;
+import com.demo.EContact.entity.Group;
 import com.demo.EContact.service.EcontactService;
+import com.demo.EContact.service.GroupService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.ModelAttribute;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.util.List;
@@ -20,6 +19,9 @@ public class EcontactController {
 
     @Autowired
     EcontactService econtactService;
+
+    @Autowired
+    GroupService groupService;
 
 
     @GetMapping(value="/EContact")
@@ -64,7 +66,21 @@ public class EcontactController {
         Econtact econtact = Econtact.builder().build();
         model.addAttribute("econtact", econtact);
 
+        List<Group> groupList = groupService.getGroup();
+        model.addAttribute("groupList", groupList);
+
         mav.setViewName("econtactForm");
+        return mav;
+    }
+
+    @GetMapping(value = "/groupForm")
+    public ModelAndView getGroupForm(Model model){
+        ModelAndView mav = new ModelAndView();
+
+        Group group = Group.builder().build();
+        model.addAttribute("group", group);
+
+        mav.setViewName("groupForm");
         return mav;
     }
 
@@ -79,9 +95,21 @@ public class EcontactController {
         return mav;
     }
 
-    @PostMapping (value = "/submitEcontact")
-    public ModelAndView submitEcontact(@ModelAttribute Econtact econtact){
+    @PostMapping (value = "/submitGroup")
+    public ModelAndView submitGroup(@ModelAttribute Group group ){
         ModelAndView mav = new ModelAndView();
+
+
+        groupService.saveGroupToDataBase(group);
+
+        mav.setViewName("redirect:/econtactForm");
+        return mav;
+    }
+
+    @PostMapping (value = "/submitEcontact")
+    public ModelAndView submitEcontact(@ModelAttribute Econtact econtact ){
+        ModelAndView mav = new ModelAndView();
+
 
         econtactService.saveEcontactToDataBase(econtact);
 
@@ -90,13 +118,9 @@ public class EcontactController {
     }
 
     @PostMapping(value = "/editEcontact")
-    public ModelAndView editEcontact(@RequestParam("econtactId") int idEcontact, @RequestParam("econtactCity") String city, Model model){
+    public ModelAndView editEcontact( Model model){
 
         ModelAndView mav = new ModelAndView();
-
-        System.out.println("ID: "  + idEcontact);
-        System.out.println("city: "  + city);
-
         Econtact econtact = Econtact.builder()
                 .id(1)
                 .firstName("Felix")
@@ -109,6 +133,9 @@ public class EcontactController {
 
         model.addAttribute("econtact", econtact);
 
+
+        List<Group> groupList = groupService.getGroup();
+        model.addAttribute("groupList", groupList);
 
         mav.setViewName("econtactForm");
         return mav;
