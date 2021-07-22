@@ -73,6 +73,17 @@ public class EcontactController {
         return mav;
     }
 
+    @GetMapping(value = "/groupForm")
+    public ModelAndView getGroupForm(Model model){
+        ModelAndView mav = new ModelAndView();
+
+        Group group = Group.builder().build();
+        model.addAttribute("group", group);
+
+        mav.setViewName("groupForm");
+        return mav;
+    }
+
     @GetMapping(value = "/Mesagerie")
     public ModelAndView getmessageEcontact(Model model){
         ModelAndView mav = new ModelAndView();
@@ -81,6 +92,17 @@ public class EcontactController {
         model.addAttribute("econtact", econtact);
 
         mav.setViewName("Mesagerie");
+        return mav;
+    }
+
+    @PostMapping (value = "/submitGroup")
+    public ModelAndView submitGroup(@ModelAttribute Group group ){
+        ModelAndView mav = new ModelAndView();
+
+
+        groupService.saveGroupToDataBase(group);
+
+        mav.setViewName("redirect:/econtactForm");
         return mav;
     }
 
