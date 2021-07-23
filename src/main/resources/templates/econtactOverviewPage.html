@@ -12,7 +12,7 @@
 </head>
 <body style="background-color: #51BDFF">
 <nav class="navbar navbar-expand-sm navbar-dark bg-primary" >
-    <div class="collapse navbar-collapse" id="navbarMenu" style="margin-left:40%; margin-right:30%;">
+    <div class="collapse navbar-collapse" id="navbarMenu" style="margin-left:30%; margin-right:30%;">
         <ul class="navbar-nav">
             <li class="nav-item">
                 <a href="http://localhost:8080/EContact" class="nav-link">Home</a>
@@ -27,7 +27,7 @@
                 <a href="http://localhost:8080/econtactOverview" class="nav-link">Contacts</a>
             </li>
             <li class="nav-item">
-                <a href="http://localhost:8080/EContact" class="nav-link">EContact</a>
+                <a href="http://localhost:8080/groupForm" class="nav-link">Add Group</a>
             </li>
         </ul>
     </div>
@@ -66,9 +66,15 @@
                 <td th:text="${econtact.group.groupName}"/>
                 <td>
                     <form method="POST" th:action="@{/editEcontact}" th:object="${econtact}">
-
-                        <button class="btn-primary" type="submit">Edit</button>
-                    </form>
+                    <input name="econtactId" th:value="${econtact.id}">
+                    <button class="btn btn-primary" type="submit">Edit</button>
+                </form>
+                </td>
+                <td>
+                <form method="POST" th:action="@{/deleteEcontact}" th:object="${econtact}">
+                    <input name="econtactId" th:value="${econtact.id}">
+                    <button class="btn btn-danger" type="submit">Delete</button>
+                </form>
                 </td>
                 <td>
                     <form method="POST" th:action="@{/messageEcontact}" th:object="${econtact}">

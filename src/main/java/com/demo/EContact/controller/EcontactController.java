@@ -118,26 +118,24 @@ public class EcontactController {
     }
 
     @PostMapping(value = "/editEcontact")
-    public ModelAndView editEcontact(Model model){
-
+    public ModelAndView editEcontact(@RequestParam("econtactId") int idEcontact, Model model){
         ModelAndView mav = new ModelAndView();
 
-        Econtact econtact = Econtact.builder()
-                .id(1)
-                .firstName("Felix")
-                .lastName("Mocanu")
-                .phoneNumber("0741588412")
-                .address("str.AlexCiurcu nr.46")
-                .city("Brasov")
-                .email("mocanufelix@yahoo.com")
-                .build();
-
+        Econtact econtact = econtactService.getEcontactById(idEcontact);
         model.addAttribute("econtact", econtact);
 
-        List<Group> groupList = groupService.getGroup();
-        model.addAttribute("groupList", groupList);
-
         mav.setViewName("econtactForm");
+        return mav;
+    }
+
+    @PostMapping(value = "/deleteEcontact")
+    public ModelAndView deleteEcontact(@RequestParam("econtactId") int idEcontact){
+        ModelAndView mav = new ModelAndView();
+
+        int deletedEcontactId = econtactService.deleteEcontactById(idEcontact);
+        System.out.println("Number of deleted econtact: " + deletedEcontactId);
+
+        mav.setViewName("redirect:/econtactOverview");
         return mav;
     }
 
