@@ -107,20 +107,21 @@ public class EcontactController {
     }
 
     @PostMapping (value = "/submitEcontact")
-    public ModelAndView submitEcontact(@ModelAttribute Econtact econtact ){
+    public ModelAndView submitEcontact(@ModelAttribute Econtact econtact){
         ModelAndView mav = new ModelAndView();
 
 
         econtactService.saveEcontactToDataBase(econtact);
 
-        mav.setViewName("redirect:/econtactOverview");
+        mav.setViewName("redirect:econtactOverview");
         return mav;
     }
 
     @PostMapping(value = "/editEcontact")
-    public ModelAndView editEcontact( Model model){
+    public ModelAndView editEcontact(Model model){
 
         ModelAndView mav = new ModelAndView();
+
         Econtact econtact = Econtact.builder()
                 .id(1)
                 .firstName("Felix")
@@ -132,7 +133,6 @@ public class EcontactController {
                 .build();
 
         model.addAttribute("econtact", econtact);
-
 
         List<Group> groupList = groupService.getGroup();
         model.addAttribute("groupList", groupList);
