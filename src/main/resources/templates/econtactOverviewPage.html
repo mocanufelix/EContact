@@ -38,7 +38,7 @@
 </div>
 
 <div style="background-color: #FFFFFF">
-    <table class="table table-striped table-hover">
+    <table class="table table-striped  table-hover table-bordered">
         <thead>
             <tr>
                 <td>ID</td>
@@ -66,13 +66,13 @@
                 <td th:text="${econtact.group.groupName}"/>
                 <td>
                     <form method="POST" th:action="@{/editEcontact}" th:object="${econtact}">
-                    <input name="econtactId" th:value="${econtact.id}">
+                    <input style="width:30px" name="econtactId" th:value="${econtact.id}">
                     <button class="btn btn-primary" type="submit">Edit</button>
                 </form>
                 </td>
                 <td>
-                <form method="POST" th:action="@{/deleteEcontact}" th:object="${econtact}">
-                    <input name="econtactId" th:value="${econtact.id}">
+                <form  method="POST" th:action="@{/deleteEcontact}" th:object="${econtact}">
+                    <input style="width:30px" name="econtactId" th:value="${econtact.id}">
                     <button class="btn btn-danger" type="submit">Delete</button>
                 </form>
                 </td>

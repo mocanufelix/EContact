@@ -59,7 +59,7 @@ public class EcontactController {
         return mav;
     }
 
-    @GetMapping(value = "/econtactForm")
+    @RequestMapping(value = "/econtactForm", method = {RequestMethod.POST, RequestMethod.GET})
     public ModelAndView getEcontactForm(Model model){
         ModelAndView mav = new ModelAndView();
 
@@ -123,6 +123,9 @@ public class EcontactController {
 
         Econtact econtact = econtactService.getEcontactById(idEcontact);
         model.addAttribute("econtact", econtact);
+
+        List<Group> groupList = groupService.getGroup();
+        model.addAttribute("groupList", groupList);
 
         mav.setViewName("econtactForm");
         return mav;
