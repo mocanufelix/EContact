@@ -4,8 +4,11 @@ package com.demo.EContact.controller;
 
 import com.demo.EContact.entity.Econtact;
 import com.demo.EContact.entity.Group;
+
+import com.demo.EContact.entity.Message;
 import com.demo.EContact.service.EcontactService;
 import com.demo.EContact.service.GroupService;
+import com.demo.EContact.service.MessageService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -23,6 +26,8 @@ public class EcontactController {
     @Autowired
     GroupService groupService;
 
+    @Autowired
+    MessageService messageService;
 
     @GetMapping(value="/EContact")
     public ModelAndView firstPageEcontact(Model model){
@@ -85,13 +90,25 @@ public class EcontactController {
     }
 
     @GetMapping(value = "/Mesagerie")
-    public ModelAndView getmessageEcontact(Model model){
+    public ModelAndView getMessage(Model model){
         ModelAndView mav = new ModelAndView();
 
-        Econtact econtact = Econtact.builder().build();
-        model.addAttribute("econtact", econtact);
+        Message message = Message.builder().build();
+        model.addAttribute("message", message);
+
 
         mav.setViewName("Mesagerie");
+        return mav;
+    }
+
+    @GetMapping(value = "/messageArchive")
+    public ModelAndView getarchiveMessage(Model model) {
+        ModelAndView mav = new ModelAndView();
+
+        List<Message> messageList = messageService.getMessage();
+        model.addAttribute("messageList", messageList);
+
+        mav.setViewName("messageArchive");
         return mav;
     }
 
@@ -103,6 +120,16 @@ public class EcontactController {
         groupService.saveGroupToDataBase(group);
 
         mav.setViewName("redirect:/econtactForm");
+        return mav;
+    }
+
+    @PostMapping (value = "/submitMessage")
+    public ModelAndView submitMessage(@ModelAttribute Message message ){
+        ModelAndView mav = new ModelAndView();
+
+        messageService.saveMessageToDataBase(message);
+
+        mav.setViewName("redirect:/messageArchive");
         return mav;
     }
 
@@ -142,14 +169,6 @@ public class EcontactController {
         return mav;
     }
 
-    @PostMapping (value = "/messageEcontact")
-    public ModelAndView messageEcontact(@ModelAttribute Econtact econtact){
-        ModelAndView mav = new ModelAndView();
-
-
-        mav.setViewName("redirect:/Mesagerie");
-        return mav;
-    }
 
 }
 

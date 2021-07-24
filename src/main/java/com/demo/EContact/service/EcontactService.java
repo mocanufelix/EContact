@@ -23,6 +23,7 @@ public class EcontactService {
     public void saveEcontactToDataBase(Econtact econtact) {
         econtactRepository.save(econtact);
     }
+
     public Econtact getEcontactById(int idEcontact) {
         Optional<Econtact> econtact = econtactRepository.findById(idEcontact);
         return econtact.get();

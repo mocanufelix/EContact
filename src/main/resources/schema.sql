@@ -19,3 +19,12 @@ create table t_group
     foreign key (id_group) references t_group (id)
  );
 
+ create table t_message
+ (
+     id   integer auto_increment,
+     addressee varchar(50),
+     subject varchar(100),
+     body varchar(200),
+     primary key (id)
+ );
+

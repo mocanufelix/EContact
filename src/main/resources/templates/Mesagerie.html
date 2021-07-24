@@ -24,6 +24,12 @@
             <li class="nav-item">
                 <a href="http://localhost:8080/groupForm" class="nav-link">Add Group</a>
             </li>
+            <li class="nav-item">
+                <a href="http://localhost:8080/Mesagerie" class="nav-link">Email</a>
+            </li>
+            <li class="nav-item">
+                <a href="http://localhost:8080/messageArchive" class="nav-link">Archive</a>
+            </li>
         </ul>
     </div>
 </nav>
@@ -32,18 +38,22 @@
     <h1>Mesagerie</h1>
 </div>
 
-<form style="width: 750px; margin:auto">
+
+    <form  action="" class="main-form needs-validation" novalidate style="width: 750px; margin:auto" th:action="@{/submitMessage}" th:object="${message}" method="POST">
+    <div class="form-group">
+        <label >Addressee</label><br>
+        <input type="text" th:field="${message.addressee}" class="form-control" required>
+    </div>
 <div class="form-group">
     <label >Subiect</label><br>
-    <textarea subiect="subiect" class="form-cotrol" placeholder="Subiect"  rows="2" cols="100"></textarea>
-</div>
-    <div class="form-group">
-        <label >Mesaj</label><br>
-        <textarea mesaj="subiect" class="form-cotrol" placeholder="Mesaj"  rows="8" cols="100"></textarea>
+    <input type="text" th:field="${message.subject}" class="form-control" required>
     </div>
-</div>
+    <div class="form-group">
+        <label >Body</label><br>
+        <textarea type="text" th:field="${message.body}" class="form-control" rows="5" cols="100" required/>
+    </div>
 
-    <button style="margin-top:20px" type="Trimite" >Trimite</button>
+    <button class="btn-primary" style="margin-top:20px" type="Send" >Trimite</button>
 </form>
 </body>
 </html>

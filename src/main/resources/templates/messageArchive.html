@@ -1,10 +1,12 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Group Form</title>
+  <title>Archive</title>
+
   <link rel="stylesheet" type="text/css"
         media="all" th:href="@{/bootstrap/css/bootstrap.min.css}">
+
 </head>
 <body style="background-color: #51BDFF">
 <nav class="navbar navbar-expand-sm navbar-dark bg-primary" >
@@ -14,7 +16,7 @@
         <a href="http://localhost:8080/EContact" class="nav-link">Home</a>
       </li>
       <li class="nav-item">
-        <a href="http://localhost:8080/econtactForm#" class="nav-link">Login</a>
+        <a href="http://localhost:8080/Login" class="nav-link">Login</a>
       </li>
       <li class="nav-item">
         <a href="http://localhost:8080/econtactForm#" class="nav-link">Add Contact</a>
@@ -36,39 +38,35 @@
 </nav>
 
 <div class="contact-title" style="margin-left:40%; margin-top:35px">
-  <h1>Add Group</h1>
+  <h1>Archive</h1>
 </div>
 
-<div class="col-lg-12">
+<div style="background-color: #FFFFFF">
+  <table class="table table-striped  table-hover table-bordered">
+    <thead>
+    <tr>
+      <td>ID</td>
+      <td>Addressee</td>
+      <td>Subject</td>
+      <td>Body</td>
+    </tr>
+    </thead>
+    <tbody>
+    <tr th:each="messsage : ${messageList}" >
+      <td th:text="${messsage.id}"/>
+      <td th:text="${messsage.addressee}"/>
+      <td th:text="${messsage.subject}"/>
+      <td th:text="${messsage.body}"/>
+    </tr>
 
+    </tbody>
 
-  <form  action="" class="main-form needs-validation" novalidate style="width: 500px; margin:auto" th:action="@{/submitGroup}" th:object="${group}" method="POST">
-
-    <div class="form-group row">
-      <label>Group Code</label>
-      <input type="text" th:field="${group.groupCode}" class="form-control" required>
-      <div class="invalid-feedback">AddCode</div>
-    </div>
-
-    <div class="form-group row">
-      <label>Group Name</label>
-      <input type="text" th:field="${group.groupName}" class="form-control" required>
-      <div class="invalid-feedback">AddName</div>
-    </div>
-
-    <div style="margin-top: 10px">
-      <button class="btn-primary">Add</button>
-    </div>
-
-  </form>
-
-
+  </table>
 
 </div>
-
 
 </body>
 
 <script th:src="@{/bootstrap/js/bootstrap.min.js}" ></script>
-</html>
 
+</html>
