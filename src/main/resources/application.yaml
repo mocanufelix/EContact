@@ -20,19 +20,22 @@ spring:
     show-sql: true
     database-platform: "org.hibernate.dialect.H2Dialect"
   mail:
-    host: smtp.gmail.com
-    port: 587
-    username: practicaibm2021@gmail.com
-    password: practica2021
-    properties:
-      mail:
-        smtp:
-          auth: true
-          enable: true
+   host: smtp.gmail.com
+   port: 587
+   username: practicaibm2021@gmail.com
+   password: practica2021
+   properties:
+    mail:
+     smtp:
+      auth: true
+      starttls:
+       enable: true
 logging:
   level:
     org:
       hibernate:
         stat: debug
         type: debug
+
+
 

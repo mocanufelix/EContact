@@ -127,16 +127,17 @@ public class EcontactController {
     public ModelAndView submitMessage(@ModelAttribute Message message ){
         ModelAndView mav = new ModelAndView();
 
+        messageService.sendEmail(message);
         messageService.saveMessageToDataBase(message);
 
         mav.setViewName("redirect:/messageArchive");
         return mav;
     }
 
+
     @PostMapping (value = "/submitEcontact")
     public ModelAndView submitEcontact(@ModelAttribute Econtact econtact){
         ModelAndView mav = new ModelAndView();
-
 
         econtactService.saveEcontactToDataBase(econtact);
 
