@@ -27,11 +27,15 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
          http.csrf().disable()
                  .authorizeRequests()
+                 .antMatchers("/h2-console/**").hasRole("MANAGER")
                  .antMatchers("/adminpage").hasRole("MANAGER")
                  .antMatchers("/userpage").hasAnyRole("USER", "MANAGER")
                  .antMatchers("/anypage").permitAll()
                  .anyRequest().authenticated()
                  .and()
                  .formLogin();
+                 http.headers().frameOptions().disable();
+
+
     }
 }
